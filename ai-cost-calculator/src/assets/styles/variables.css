@@ -1,0 +1,37 @@
+/* ai-cost-calculator/src/assets/styles/variables.css */
+
+/* Light Mode (Default) */
+:root {
+    --primary-color: #007bff; /* Blue */
+    --secondary-color: #6c757d; /* Grey */
+    --background-color: #f8f9fa; /* Light grey */
+    --card-background: #ffffff; /* White */
+    --input-background: #ffffff;
+    --border-color: #dee2e6; /* Lighter grey */
+    --text-color: #343a40; /* Dark grey */
+    --header-bg: #e9ecef; /* Even lighter grey */
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Soft shadow */
+    --success-color: #28a745; /* Green */
+    --info-color: #17a2b8; /* Teal */
+    --warning-color: #ffc107; /* Yellow */
+    --danger-color: #dc3545; /* Red */
+  }
+  
+  /* Dark Mode Example (Uncomment and implement a toggle in App.js if desired) */
+  /*
+  body.dark-mode {
+    --primary-color: #8ab4f8;
+    --secondary-color: #bdc1c6;
+    --background-color: #202124;
+    --card-background: #2f3032;
+    --input-background: #3c4043;
+    --border-color: #5f6368;
+    --text-color: #e8eaed;
+    --header-bg: #3c4043;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --success-color: #81c995;
+    --info-color: #78d2ea;
+    --warning-color: #fdd663;
+    --danger-color: #f28b82;
+  }
+  */

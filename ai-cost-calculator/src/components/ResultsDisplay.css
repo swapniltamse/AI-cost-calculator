@@ -1,0 +1,45 @@
+/* ai-cost-calculator/src/components/ResultsDisplay.css */
+
+.results-container h2 {
+    color: var(--primary-color);
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .results-container h3 {
+    color: var(--text-color);
+    font-size: 1.4em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+  }
+  
+  .cost-summary p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+  }
+  
+  .cost-summary strong {
+    color: var(--primary-color);
+    font-weight: 700;
+  }
+  
+  .cost-breakdown p {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    color: var(--secondary-color);
+  }
+  
+  .recommendations {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 15px;
+  }
+  
+  .recommendations li {
+    margin-bottom: 8px;
+    color: var(--text-color);
+    line-height: 1.5;
+  }

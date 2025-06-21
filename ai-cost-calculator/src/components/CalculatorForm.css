@@ -1,0 +1,58 @@
+/* ai-cost-calculator/src/components/CalculatorForm.css */
+
+.calculator-form .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .calculator-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 1em;
+  }
+  
+  .calculator-form select,
+  .calculator-form input[type="number"],
+  .calculator-form textarea {
+    display: block; /* Ensures they take full width */
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: var(--input-background);
+    box-sizing: border-box; /* Include padding in width calculation */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .calculator-form select:focus,
+  .calculator-form input[type="number"]:focus,
+  .calculator-form textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+  }
+  
+  .calculator-form textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .calculator-form .checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    gap: 10px; /* Space between checkbox and label */
+  }
+  
+  .calculator-form .checkbox-group input[type="checkbox"] {
+    width: auto; /* Override full width for checkbox */
+    margin: 0;
+  }
+  
+  .calculator-form .calculate-button {
+    width: 100%; /* Full width button */
+  }

@@ -1,0 +1,62 @@
+/* ai-cost-calculator/src/components/Tooltip.css */
+
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 8px; /* Space from the label text */
+    vertical-align: middle;
+  }
+  
+  .tooltip-box {
+    /* Initial state: hidden and transparent */
+    visibility: hidden;
+    opacity: 0;
+  
+    width: 220px; /* Wider tooltip for more text */
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text */
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px 12px; /* More padding */
+    font-size: 0.85em; /* Smaller font for tooltip text */
+    line-height: 1.4;
+  
+    /* Positioning */
+    position: absolute;
+    z-index: 1000; /* Ensure it's on top */
+    bottom: 125%; /* Position above the element */
+    left: 50%;
+    transform: translateX(-50%); /* Center the tooltip horizontally */
+  
+    /* Transition for smooth appearance/disappearance */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  
+    /* Pointer events none so it doesn't block clicks on content below it */
+    pointer-events: none;
+  }
+  
+  /* Show the tooltip on hover */
+  .tooltip-container:hover .tooltip-box {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  /* Arrow styling */
+  .tooltip-box::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -8px; /* Center the arrow */
+    border-width: 8px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent; /* Dark arrow matching background */
+  }
+  
+  /* Ensure label text and tooltip icon are aligned */
+  .form-group label {
+    display: flex;
+    align-items: center;
+    line-height: normal; /* Ensure label height doesn't interfere */
+  }
