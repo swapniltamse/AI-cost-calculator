@@ -2,154 +2,173 @@
 
 /* Base Styles */
 body {
-    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Prefer Inter if loaded, fallback to system fonts */
-    margin: 0;
-    padding: 0;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  /* Load Inter font (example, can be done in index.html as well) */
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-  
-  
-  /* Main Container */
-  .app-container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: var(--card-background);
-    border-radius: 12px; /* More rounded corners */
-    box-shadow: var(--shadow);
-    display: flex;
-    flex-direction: column;
-    gap: 30px; /* Space between sections */
-  }
-  
-  /* Header */
-  .app-header {
-    text-align: center;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--border-color);
-  }
-  
-  .app-header h1 {
-    color: var(--primary-color);
-    margin-bottom: 10px;
-    font-size: 2.5em;
-    font-weight: 700;
-  }
-  
-  .app-header p {
-    color: var(--secondary-color);
-    font-size: 1.1em;
-  }
-  
-  /* Main Content Layout */
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Prefer Inter if loaded, fallback to system fonts */
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Load Inter font (example, can be done in index.html as well) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+
+/* Main Container */
+.app-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--card-background);
+  border-radius: 12px; /* More rounded corners */
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Space between sections */
+}
+
+/* Header */
+.app-header {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.app-header h1 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+.app-header p {
+  color: var(--secondary-color);
+  font-size: 1.1em;
+}
+
+/* Main Content Layout */
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column on small screens */
+  gap: 30px;
+}
+
+/* Responsive Grid for larger screens */
+@media (min-width: 768px) {
   .main-content {
-    display: grid;
-    grid-template-columns: 1fr; /* Single column on small screens */
-    gap: 30px;
+    /* Calculator in 1st column, Results/Comparison container in 2nd column */
+    grid-template-columns: 1.2fr 2fr; /* Adjust ratios as needed, e.g., 1fr 1.5fr or 1fr 1fr if you want equal width */
+    /* Removed grid-template-areas as it's simpler without named areas for this 2-column layout */
   }
-  
-  /* Responsive Grid for larger screens */
-  @media (min-width: 768px) {
-    .main-content {
-      grid-template-columns: 1fr 1fr; /* Two columns on medium screens */
-    }
+
+  /*
+  .calculator-section {
+    grid-area: calculator; // No longer needed if not using named areas
   }
-  
-  @media (min-width: 1024px) {
-    .main-content {
-      grid-template-columns: 1fr 1fr 1fr; /* Three columns on large screens */
-    }
+  */
+
+  /* NEW: Styles for the container holding Results and Comparison */
+  .output-sections-container {
+    display: flex; /* Use flexbox to stack its children vertically */
+    flex-direction: column;
+    gap: 30px; /* Space between ResultsDisplay and ComparisonTable */
   }
-  
-  .calculator-section,
-  .results-section,
-  .comparison-section {
-    padding: 25px;
-    border: 1px solid var(--border-color);
-    border-radius: 10px; /* Rounded corners for sections */
-    background-color: var(--card-background);
-    box-shadow: var(--shadow);
+}
+
+/* On very large screens, you might revert to 3 columns if you have a lot of content,
+   but for this layout, 2 columns with stacked right panel is generally better.
+   So, removing the 3-column media query here unless specifically needed later.
+@media (min-width: 1024px) {
+  .main-content {
+    grid-template-columns: 1fr 1fr 1fr;
   }
-  
-  /* Footer */
-  .app-footer {
-    text-align: center;
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border-color);
-    color: var(--secondary-color);
-    font-size: 0.9em;
-  }
-  
-  /* General Form Element Styling */
-  select,
-  input[type="number"],
-  textarea {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 6px; /* Rounded inputs */
-    font-size: 1rem;
-    color: var(--text-color);
-    background-color: var(--input-background);
-    box-sizing: border-box;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  }
-  
-  select:focus,
-  input[type="number"]:focus,
-  textarea:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
-    outline: none;
-  }
-  
-  textarea {
-    resize: vertical;
-    min-height: 100px;
-  }
-  
-  /* Buttons */
-  button {
-    padding: 12px 20px;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 8px; /* Rounded buttons */
-    font-size: 1.1em;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.1s ease;
-    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-    transform: translateY(-1px);
-  }
-  
-  button:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
-  }
-  
-  /* Link-like buttons or interactive text */
-  a {
-    color: var(--primary-color);
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Additional utility classes can go here (e.g., text alignment) */
-  .text-center { text-align: center; }
-  .mt-20 { margin-top: 20px; }
+}
+*/
+
+.calculator-section,
+.results-section,
+.comparison-section {
+  padding: 25px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px; /* Rounded corners for sections */
+  background-color: var(--card-background);
+  box-shadow: var(--shadow);
+}
+
+/* Footer */
+.app-footer {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+  color: var(--secondary-color);
+  font-size: 0.9em;
+}
+
+/* General Form Element Styling */
+select,
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px; /* Rounded inputs */
+  font-size: 1rem;
+  color: var(--text-color);
+  background-color: var(--input-background);
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+select:focus,
+input[type="number"]:focus,
+textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Buttons */
+button {
+  padding: 12px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px; /* Rounded buttons */
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+}
+
+/* Link-like buttons or interactive text */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Additional utility classes can go here (e.g., text alignment) */
+.text-center { text-align: center; }
+.mt-20 { margin-top: 20px; }

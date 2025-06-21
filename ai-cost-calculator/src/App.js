@@ -173,11 +173,14 @@ function App() {
         <div className="calculator-section">
           <CalculatorForm onCalculate={handleCalculate} />
         </div>
-        <div className="results-section">
-          <ResultsDisplay results={calculationResults} />
-        </div>
-        <div className="comparison-section">
-          <ComparisonTable comparisonResults={comparisonResults} />
+        {/* NEW CONTAINER FOR RESULTS AND COMPARISON TABLES */}
+        <div className="output-sections-container">
+          <div className="results-section">
+            <ResultsDisplay results={calculationResults} />
+          </div>
+          <div className="comparison-section">
+            <ComparisonTable comparisonResults={comparisonResults} />
+          </div>
         </div>
       </main>
       {/* Footer */}
